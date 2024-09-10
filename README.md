@@ -1,5 +1,6 @@
 ## This is a assignment project given by [acowale](https://acowale.com/)
 
+## I build it with React.js and Tailwind css
 
 ## Open your terminal here and run following command
 

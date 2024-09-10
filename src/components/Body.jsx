@@ -1,24 +1,5 @@
-import React, { useState } from 'react'
-
-function ImageWithPlaceholder({ src, alt, placeholder }) {
-  const [imageLoaded, setImageLoaded] = useState(true);
-
-  const handleError = (event) => {
-    // Check if the error is due to access denial
-    if (event.target.src === src) {
-      setImageLoaded(false);
-    }
-  };
-
-  return (
-    <img
-      className="w-[100%] h-56 rounded"
-      src={imageLoaded ? src : placeholder}
-      alt={alt}
-      onError={handleError}
-    />
-  );
-}
+import React from 'react'
+import ImageWithPlaceholder from './ImageWithPlaceholder';
 
 function Body(props) {
 
@@ -68,9 +49,9 @@ function Body(props) {
               <div className='text-cyan-900'>{getDiff(article["publishedAt"])}</div>
             </div>
 
-            {(article["title"].length >= 1000 ? <div className="font-bold">{article["title"].slice(0, 100) + "..."}</div> : <div className="font-bold">{article["title"]}</div>)}
+            {(article["title"].length >= 200 ? <div className="font-bold">{article["title"].slice(0, 100) + "..."}</div> : <div className="font-bold">{article["title"]}</div>)}
 
-            {(article["description"].length >= 2500 ? <div>{article["description"].slice(0, 250) + "..."}</div> : <div>{article["description"]}</div>)}
+            {(article["description"].length >= 250 ? <div>{article["description"].slice(0, 250) + "..."}</div> : <div>{article["description"]}</div>)}
 
 
             <a className='mx-auto mt-2' href={article["url"]} target='_blank' rel="noreferrer">
